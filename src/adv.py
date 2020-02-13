@@ -49,3 +49,17 @@ room['treasure'].s_to = room['narrow']
 # Print an error message if the movement isn't allowed.
 #
 # If the user enters "q", quit the game.
+player = Player("Slender", room['outside'])
+
+while True:
+    valid_directions = ["n", "e", "w", "s"]
+    user_input = input("Enter cardinal direction e.g n, w, e, s \n =>")
+
+    if user_input.lower() in valid_directions:
+        player.move(user_input)
+    elif user_input.lower() == "q":
+        print("You quit :) bye...")
+        exit()
+    else:
+        user_input = input(
+            "Invalid direction Enter cardinal direction e.g n, w, e, s\n =>")
